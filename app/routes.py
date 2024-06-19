@@ -633,7 +633,7 @@ def internal_error(e):
 
 def run_app() -> None:
     parser = argparse.ArgumentParser(
-        description='Whoogle Search console runner')
+        description='Sofin Search console runner')
     parser.add_argument(
         '--port',
         default=5000,

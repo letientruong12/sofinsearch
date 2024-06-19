@@ -25,3 +25,5 @@ whoogle.env
 # vim
 *~
 *.swp
+
+.vs/
