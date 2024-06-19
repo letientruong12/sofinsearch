@@ -7,23 +7,35 @@
 # 0 3 * * * /home/pi/whoogle-search/config/heroku-regen.sh <app_name>
 
 HEROKU_CLI_SITE="https://devcenter.heroku.com/articles/heroku-cli"
+GITHUB_REPO="https://github.com/letientruong12"
 
 if ! [[ -x "$(command -v heroku)" ]]; then
     echo "Must have heroku cli installed: $HEROKU_CLI_SITE"
     exit 1
 fi
 
-cd "$(builtin cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)/../"
-
 if [[ $# -ne 1 ]]; then
-    echo -e "Must provide the name of the Whoogle instance to regenerate"
+    echo -e "Must provide the name of the Heroku app to regenerate"
     exit 1
 fi
 
 APP_NAME="$1"
 
+# Destroy the existing app
 heroku apps:destroy "$APP_NAME" --confirm "$APP_NAME"
+
+# Create a new app
 heroku apps:create "$APP_NAME"
-heroku container:login
-heroku container:push web
-heroku container:release web
+
+# Clone the GitHub repository
+TEMP_DIR=$(mktemp -d)
+git clone "$GITHUB_REPO" "$TEMP_DIR"
+
+# Change directory to the cloned repo
+cd "$TEMP_DIR"
+
+# Deploy the app to Heroku
+git push heroku master
+
+# Clean up the temporary directory
+rm -rf "$TEMP_DIR"
