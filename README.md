@@ -10,7 +10,7 @@
 <table>
   <tr>
     <td><a href="https://sr.ht/~benbusby/whoogle-search">SourceHut</a></td>
-    <td><a href="https://github.com/benbusby/whoogle-search">GitHub</a></td>
+    <td><a href="https://github.com/letientruong12/sofinsearch">GitHub</a></td>
   </tr>
 </table>
 
@@ -78,7 +78,7 @@ There are a few different ways to begin using the app, depending on your prefere
 ___
 
 ### [Heroku Quick Deploy](https://heroku.com/about)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/benbusby/whoogle-search/tree/main)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/letientruong12/sofinsearch/tree/master)
 
 Provides:
 - Easy Deployment of App
