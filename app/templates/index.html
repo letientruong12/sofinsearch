@@ -60,9 +60,6 @@
 </head>
 <body id="main">
 <div class="search-container">
-    <div class="logo-container">
-        {{ logo|safe }}
-    </div>
     <form id="search-form" action="search" method="{{ 'get' if config.get_only else 'post' }}">
         <div class="search-fields">
             <div class="autocomplete">
