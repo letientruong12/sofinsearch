@@ -1,0 +1,21 @@
+<form id="search-form" action="search" method="{{ 'get' if config.get_only else 'post' }}">
+    <div class="search-fields">
+        <div class="autocomplete">
+            {% if config.preferences %}
+                <input type="hidden" name="preferences" value="{{ config.preferences }}" />
+            {% endif %}
+            <input
+                    type="text"
+                    name="q"
+                    id="search-bar"
+                    class="home-search"
+                    autofocus="autofocus"
+                    autocapitalize="none"
+                    spellcheck="false"
+                    autocorrect="off"
+                    autocomplete="off"
+                    dir="auto">
+        </div>
+        <input type="submit" id="search-submit" value="{{ translation['search'] }}">
+    </div>
+</form>
